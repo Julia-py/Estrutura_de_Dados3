@@ -90,4 +90,17 @@ public class Arvore {
         }
         return menor;
    }
+
+   public void imprimir(){
+        imprimirRec(raiz, "", true);
+
+   }
+   private void imprimirRec (Nodo nodo, String prefixo, boolean isLetf) {
+        if(nodo!= null) {
+            System.out.println(prefixo + (isLetf ? "|- " : "'-- " ) + nodo.valor);
+            imprimirRec(nodo.esquerdo, prefixo + (isLetf ? "|  " : "  "), true);
+            imprimirRec(nodo.direito, prefixo + (isLetf ? "|  " : "  "), false);
+
+        }
+   }
 }

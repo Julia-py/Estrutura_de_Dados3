@@ -1,27 +1,65 @@
 package Arvore;
 
+import java.util.Scanner;
+
 public class main {
     public static void main(String [] args) {
         Arvore arvore = new Arvore();
+        Scanner sc = new Scanner(System.in);
+        int opcao, valor;
 
-        arvore.adicionar(10);
-        arvore.adicionar(50);
-        arvore.adicionar(5);
-        arvore.adicionar(70);
-        arvore.adicionar(80);
-        arvore.adicionar(45);
-        arvore.adicionar(35);
-        arvore.adicionar(20);
+        do {
+            System.out.println("\n===== MENU =====");
+            System.out.println("1 - Inserir");
+            System.out.println("2 - Buscar");
+            System.out.println("3 - Remover");
+            System.out.println("4 - Mostrar árvore");
+            System.out.println("0 - Sair");
+            System.out.print("Escolha: ");
 
-        System.out.println("Buscar 40: " + arvore.buscar(40));
-        System.out.println("Buscar 70: " + arvore.buscar(70));
+            opcao = sc.nextInt();
 
-        arvore.remover(20);
-        System.out.println("Buscar 30 após remoção: " + arvore.buscar(30));
+            switch (opcao) {
 
+                case 1:
+                    System.out.print("Digite o valor: ");
+                    valor = sc.nextInt();
+                    arvore.adicionar(valor);
+                    break;
 
-        arvore.remover(70);
-        System.out.println("Buscar 70 após remoção: " + arvore.buscar(70));
+                case 2:
+                    System.out.print("Digite o valor: ");
+                    valor = sc.nextInt();
+                    if (arvore.buscar(valor)) {
+                        System.out.println("Valor encontrado!");
+                    } else {
+                        System.out.println("Valor NÃO encontrado!");
+                    }
+                    break;
 
+                case 3:
+                    System.out.print("Digite o valor: ");
+                    valor = sc.nextInt();
+                    arvore.remover(valor);
+                    System.out.println("Valor removido!");
+                    break;
+
+                case 4:
+                    System.out.println("\n🌳 Árvore:");
+                    arvore.imprimir();
+                    break;
+
+                case 0:
+                    System.out.println("Saindo...");
+                    break;
+
+                default:
+                    System.out.println("Opção inválida!");
+            }
+
+        } while (opcao != 0);
+
+        sc.close();
     }
 }
+
