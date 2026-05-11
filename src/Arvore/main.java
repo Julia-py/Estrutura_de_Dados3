@@ -14,6 +14,9 @@ public class main {
             System.out.println("2 - Buscar");
             System.out.println("3 - Remover");
             System.out.println("4 - Mostrar árvore");
+            System.out.println("5 - Pré-Ordem");
+            System.out.println("6 - Em Ordem");
+            System.out.println("7 - Pós-Ordem");
             System.out.println("0 - Sair");
             System.out.print("Escolha: ");
 
@@ -48,7 +51,21 @@ public class main {
                     System.out.println("\n🌳 Árvore:");
                     arvore.imprimir();
                     break;
-
+                case 5:
+                    System.out.println("\nPré-Ordem:");
+                    arvore.PreOrdem();
+                    System.out.println();
+                    break;
+                case 6:
+                    System.out.println("\nEm-Ordem:");
+                    arvore.EmOrdem();
+                    System.out.println();
+                    break;
+                case 7:
+                    System.out.println("\nPós-Ordem:");
+                    arvore.PosOrdem();
+                    System.out.println();
+                    break;
                 case 0:
                     System.out.println("Saindo...");
                     break;

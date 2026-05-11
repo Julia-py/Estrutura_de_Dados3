@@ -1,9 +1,9 @@
 package Arvore;
 
 public class Nodo {
-    int valor;
-    Nodo esquerdo;
-    Nodo direito;
+    public int valor;
+    public Nodo esquerdo;
+    public Nodo direito;
 
     public Nodo(int valor) {
         this.valor = valor;

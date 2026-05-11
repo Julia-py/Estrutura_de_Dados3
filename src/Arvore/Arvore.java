@@ -1,4 +1,7 @@
 package Arvore;
+
+import java.util.Stack;
+
 // remover
 /* folha
 -o pai aponta para null;
@@ -90,6 +93,43 @@ public class Arvore {
         }
         return menor;
    }
+
+    //1. raiz --> 2.Esquerda --> 3. direita
+    // Print -> anda
+    public void PreOrdem(){
+        preOrdemR(raiz);
+    }
+    private void preOrdemR(Nodo atual){
+        if (atual!= null){
+            System.out.println(atual.valor + " ");
+            preOrdemR(atual.esquerdo);
+            preOrdemR(atual.direito);
+        }
+    }
+
+    // 1.Esquerda -> 2. raiz -> 3.Direita
+    //Anda -> imprimi
+    public void EmOrdem(){
+        emOrdemR(raiz);
+    }
+    private void emOrdemR(Nodo atual){
+        if(atual != null){
+            emOrdemR(atual.esquerdo);
+            System.out.println(atual.valor + " ");
+            emOrdemR(atual.direito);
+        }
+    }
+    //1.Esquerda -> 2. direita -> 3. raiz
+    public void PosOrdem(){
+    posOrdemR(raiz);
+    }
+    private void posOrdemR(Nodo atual){
+        if (atual != null){
+           posOrdemR(atual.esquerdo);
+           preOrdemR(atual.direito);
+           System.out.println(atual.valor +" ");
+        }
+    }
 
    public void imprimir(){
         imprimirRec(raiz, "", true);
